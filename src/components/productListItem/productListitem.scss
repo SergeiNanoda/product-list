@@ -1,0 +1,85 @@
+@import "/src/assets/color.scss";
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.productListItem-normal {
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  border-radius: 30px;
+  font-family: "Poppins", sans-serif;
+  &:not(nth-last-child) {
+    margin-right: 20px;
+  }
+
+  border: 2px dashed $darkgray;
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title {
+    font-size: 20px;
+    font-weight: 400;
+    max-height: 100px;
+    height: 100%;
+    flex: 0 0 100px;
+  }
+
+  &__price {
+    font-size: 24px;
+    font-weight: 500;
+  }
+
+  img {
+    max-width: 200px;
+    max-height: 200px;
+  }
+}
+
+.productListItem-minimized {
+  height: 130px;
+  display: flex;
+  align-self: center;
+
+  img {
+    max-width: 108px;
+    max-height: 108px;
+  }
+
+  &__title {
+    font-size: 16px;
+    font-weight: 400;
+    max-height: 48px;
+    height: 100%;
+    flex: 0 0 48px;
+  }
+
+  &__price {
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__content {
+    width: 100%;
+    padding-left: 15px;
+  }
+
+  button {
+    svg {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}

@@ -1,0 +1,20 @@
+@import "/src/assets/color.scss";
+
+body {
+  overflow-y: hidden;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+*::-webkit-scrollbar {
+  width: 1em;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: #c3c3c3;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: $yellow;
+  border-radius: 15px;
+}

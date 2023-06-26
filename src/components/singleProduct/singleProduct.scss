@@ -1,0 +1,35 @@
+.singleProduct {
+  display: flex;
+  max-height: 530px;
+  margin: auto;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 50px;
+    padding-top: 50px;
+  }
+
+  &__title {
+    font-size: 64px;
+    font-weight: 400;
+  }
+
+  &__price {
+    font-size: 64px;
+    font-weight: 500;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  button {
+    svg {
+      width: 98px;
+      height: 98px;
+    }
+  }
+}

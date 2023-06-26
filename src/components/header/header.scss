@@ -1,0 +1,20 @@
+@import "/src/assets/color.scss";
+
+.header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background: $yellow;
+  width: 100%;
+  border-bottom: 1px solid $darkgray;
+  height: 100px;
+
+  &__title {
+    display: block;
+    padding-right: 25px;
+    font-family: "Anek Telugu", sans-serif;
+    color: $darkgray;
+    font-weight: 600;
+    font-size: 32px;
+  }
+}
