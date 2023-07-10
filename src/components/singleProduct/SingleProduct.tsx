@@ -24,8 +24,8 @@ export function SingleProduct(props: IProductListItemProps) {
 
   useEffect(() => {
     (async () => {
-      const result: IProduct = await fetchRequest(`/image?id=${id}`);
-      setProduct(result);
+      const result: IProduct[] = await fetchRequest(`/image?id=${id}`);
+      setProduct(result[0]);
     })();
   }, []);
 
