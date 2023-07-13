@@ -1,5 +1,10 @@
 .productList {
   display: flex;
   flex: 1;
-  padding-top: 85px;
+}
+@media (max-width: 970px) {
+  .productList {
+    height: 100vh !important;
+    width: 100vw !important;
+  }
 }

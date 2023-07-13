@@ -1,29 +1,32 @@
 @import "/src/assets/color.scss";
 
-.favouriteItems__container {
-  // width: 683px;
-  // height: calc(100vh - 300px);
+.favouriteItems {
+  display: flex;
+  flex-direction: column;
+  border: 2px dashed $darkgray;
+  border-radius: 30px;
+  width: 407px;
+  height: calc(100vh - 300px);
+  padding: 20px 30px;
+  margin: 100px;
   box-sizing: border-box;
-  padding: 100px;
 
+  &__title {
+    font-family: "Anek Telugu", sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 36px;
+  }
+
+  &__list {
+    overflow-y: auto;
+  }
+}
+
+@media (max-width: 970px) {
   .favouriteItems {
-    display: flex;
-    flex-direction: column;
-    border: 2px dashed $darkgray;
-    border-radius: 30px;
-    width: 407px;
-    height: 100%;
-    padding: 20px 30px;
-
-    &__title {
-      font-family: "Anek Telugu", sans-serif;
-      font-size: 24px;
-      font-weight: 600;
-      line-height: 36px;
-    }
-
-    &__list {
-      overflow-y: auto;
-    }
+    margin: 20px 10px 85px 10px;
+    height: 250px;
+    max-width: 100%;
   }
 }

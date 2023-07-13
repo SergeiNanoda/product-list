@@ -9,14 +9,12 @@ function FafouriteItems() {
   const [favouriteProducts] = useGlobalState("favourites");
 
   return (
-    <div className="favouriteItems__container">
-      <div className="favouriteItems">
-        <h1 className="favouriteItems__title">FAVORITES</h1>
-        <div className="favouriteItems__list">
-          {favouriteProducts.map((favouriteProduct) => (
-            <ProductListItem product={favouriteProduct} variant="minimized" />
-          ))}
-        </div>
+    <div className="favouriteItems">
+      <h1 className="favouriteItems__title">FAVORITES</h1>
+      <div className="favouriteItems__list">
+        {favouriteProducts.map((favouriteProduct) => (
+          <ProductListItem product={favouriteProduct} variant="minimized" />
+        ))}
       </div>
     </div>
   );
