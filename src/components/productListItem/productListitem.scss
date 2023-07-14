@@ -41,6 +41,13 @@ button {
     max-width: 200px;
     max-height: 200px;
   }
+
+  button {
+    svg {
+      width: 36px;
+      height: 36px;
+    }
+  }
 }
 
 .productListItem-minimized {
