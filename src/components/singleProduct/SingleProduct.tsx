@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import fetchRequest, { API_URL } from "../../utils/fetchRequest";
-import { Link, useLocation } from "react-router-dom";
 import { toggleFavourites, useGlobalState } from "../../state";
 import { IProduct } from "../productList/ProductList";
 import { useParams } from "react-router-dom";
@@ -10,11 +9,7 @@ import EmptyHeart from "../icons/EmptyHeart";
 
 import "./singleProduct.scss";
 
-interface IProductListItemProps {
-  product?: IProduct;
-}
-
-export function SingleProduct(props: IProductListItemProps) {
+export const SingleProduct: React.FC<{}> = () => {
   const [product, setProduct] = useState<IProduct>();
   const [favouriteProducts] = useGlobalState("favourites");
 
@@ -27,7 +22,7 @@ export function SingleProduct(props: IProductListItemProps) {
       const result: IProduct[] = await fetchRequest(`/image?id=${id}`);
       setProduct(result[0]);
     })();
-  }, []);
+  }, [id]);
 
   return product ? (
     <div className="singleProduct">
@@ -37,7 +32,7 @@ export function SingleProduct(props: IProductListItemProps) {
             smallImage: {
               width: 448,
               height: 448,
-              isFluidWidth: false,
+              isFluidWidth: true,
               src: API_URL + product.src,
             },
             largeImage: {
@@ -45,6 +40,7 @@ export function SingleProduct(props: IProductListItemProps) {
               width: 1200,
               height: 1800,
             },
+            enlargedImageContainerClassName: "singleProduct__enlargedImageContainer",
             isHintEnabled: true,
             shouldHideHintAfterFirstActivation: false,
           }}
@@ -53,7 +49,7 @@ export function SingleProduct(props: IProductListItemProps) {
       <div className="singleProduct__content">
         <div className="singleProduct__title">{product.name}</div>
         <div className="singleProduct__footer">
-          <span className="singleProduct__price">{`$ ${product.price}`}</span>
+          <span className="singleProduct__price">{`$\xa0${product.price}`}</span>
           <button
             onClick={(e) => {
               e.stopPropagation();
