@@ -40,7 +40,8 @@ export const SingleProduct: React.FC<{}> = () => {
               width: 1200,
               height: 1800,
             },
-            enlargedImageContainerClassName: "singleProduct__enlargedImageContainer",
+            enlargedImageContainerClassName:
+              "singleProduct__enlargedImageContainer",
             isHintEnabled: true,
             shouldHideHintAfterFirstActivation: false,
           }}
@@ -51,6 +52,7 @@ export const SingleProduct: React.FC<{}> = () => {
         <div className="singleProduct__footer">
           <span className="singleProduct__price">{`$\xa0${product.price}`}</span>
           <button
+            className="singleButton"
             onClick={(e) => {
               e.stopPropagation();
               toggleFavourites(product);
@@ -64,6 +66,6 @@ export const SingleProduct: React.FC<{}> = () => {
   ) : (
     <div>Loading</div>
   );
-}
+};
 
 export default SingleProduct;

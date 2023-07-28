@@ -42,8 +42,16 @@
 
   button {
     svg {
-      width: 98px;
-      height: 98px;
+      width: 60px;
+      height: 60px;
+    }
+    svg:hover {
+      width: 65px;
+      height: 65px;
     }
   }
+}
+.singleButton {
+  width: 61px;
+  height: 61px;
 }

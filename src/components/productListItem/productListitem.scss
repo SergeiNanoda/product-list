@@ -40,12 +40,17 @@ button {
   img {
     max-width: 200px;
     max-height: 200px;
+    cursor: pointer;
   }
 
   button {
     svg {
       width: 36px;
       height: 36px;
+    }
+    svg:hover {
+      width: 40px;
+      height: 40px;
     }
   }
 }
@@ -58,6 +63,7 @@ button {
   img {
     max-width: 108px;
     max-height: 108px;
+    cursor: pointer;
   }
 
   &__title {
@@ -87,6 +93,10 @@ button {
     svg {
       width: 30px;
       height: 30px;
+    }
+    svg:hover {
+      width: 35px;
+      height: 35px;
     }
   }
 }
