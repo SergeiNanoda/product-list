@@ -69,16 +69,15 @@ function ProductList() {
         const FAV_BLOCK_WIDTH = 606;
         const FAV_BLOCK_HEIGHT = 340;
         const calcWidth = width <= 970 ? width : width - FAV_BLOCK_WIDTH;
-        const calcHeight = width <= 970 ? height - FAV_BLOCK_HEIGHT : height;
+        // const calcHeight = width <= 970 ? height - FAV_BLOCK_HEIGHT : height;
 
-        console.log({ calcHeight, height, calcWidth, column_count, rest });
         setDisplayWidth(width);
 
         return (
           <Grid
             columnCount={column_count}
             columnWidth={Math.ceil(calcWidth / column_count) - WIDTH_PADDING}
-            height={calcHeight}
+            height={height}
             rowCount={Math.ceil(products.length / column_count)}
             rowHeight={ROW_HEIGHT}
             width={calcWidth}

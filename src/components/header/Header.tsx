@@ -2,6 +2,7 @@ import React, { useEffect, useMemo } from "react";
 import "./header.scss";
 import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { toggleFavouritesVisible } from "../../state";
 
 function Header() {
   const navigate = useNavigate();
@@ -24,6 +25,13 @@ function Header() {
         className="fa-solid fa-house"
         style={{ color: "#0a0a0a" }}
       ></i>
+      <div className="favouriteItemsButton">
+        <i
+          onClick={toggleFavouritesVisible}
+          className="fa-solid fa-heart"
+          style={{ color: "#000000" }}
+        ></i>
+      </div>
       <span className="header__title">{pageTitles[path]}</span>
     </div>
   );

@@ -3,6 +3,7 @@ import { IProduct } from "./components/productList/ProductList";
 
 const initialState = {
   favourites: [] as IProduct[],
+  isFavouritesVisible: false,
 };
 
 export const { useGlobalState, setGlobalState } =
@@ -21,5 +22,10 @@ export const toggleFavourites = (product: IProduct) => {
       // If product doesn't exist in array, add it
       return [...state, product];
     }
+  });
+};
+export const toggleFavouritesVisible = () => {
+  setGlobalState("isFavouritesVisible", (state) => {
+    return !state;
   });
 };

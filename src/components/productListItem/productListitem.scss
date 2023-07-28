@@ -55,6 +55,11 @@ button {
   }
 }
 
+@media (max-width: 970px) {
+  .productListItem-normal {
+    margin-left: 20px;
+  }
+}
 .productListItem-minimized {
   height: 130px;
   display: flex;

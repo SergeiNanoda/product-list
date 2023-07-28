@@ -25,8 +25,22 @@
 
 @media (max-width: 970px) {
   .favouriteItems {
-    margin: 20px 10px 85px 10px;
-    height: 250px;
+    position: absolute;
+    z-index: 100;
+    left: -100%;
+    top: 100px;
+    width: 100%;
+    border-radius: 0;
+    background-color: white;
+    margin: 0;
+    height: calc(100vh - 101px);
     max-width: 100%;
+    transition: left 1s;
+  }
+  .favouriteItems.visible {
+    left: 0px;
+  }
+  .favouriteItems.hidden {
+    left: -100%;
   }
 }
