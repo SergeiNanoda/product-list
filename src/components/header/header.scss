@@ -2,7 +2,7 @@
 
 .header {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   background: $yellow;
   width: 100%;
@@ -16,5 +16,21 @@
     color: $darkgray;
     font-weight: 600;
     font-size: 32px;
+  }
+}
+.fa-house {
+  font-size: 3em;
+  margin-left: 20px;
+  margin-right: 20px;
+  width: auto;
+  height: auto;
+  cursor: pointer;
+}
+@media (max-width: 348px) {
+  .header__title {
+    display: none;
+  }
+  .header {
+    justify-content: center;
   }
 }

@@ -1,8 +1,10 @@
 import React, { useEffect, useMemo } from "react";
 import "./header.scss";
 import { useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Header() {
+  const navigate = useNavigate();
   const location = useLocation();
 
   const path = useMemo(() => {
@@ -15,6 +17,13 @@ function Header() {
 
   return (
     <div className="header">
+      <i
+        onClick={() => {
+          navigate("/");
+        }}
+        className="fa-solid fa-house"
+        style={{ color: "#0a0a0a" }}
+      ></i>
       <span className="header__title">{pageTitles[path]}</span>
     </div>
   );
