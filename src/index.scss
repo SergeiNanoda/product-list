@@ -1,4 +1,7 @@
+@use "sass:map";
+
 @import "/src/assets/color.scss";
+@import "/src/assets/breakpoints.scss";
 
 body {
   overflow-y: hidden;
@@ -17,4 +20,8 @@ body {
 *::-webkit-scrollbar-thumb {
   background-color: $yellow;
   border-radius: 15px;
+}
+
+html {
+  min-width: map.get($grid-breakpoints, "xs");
 }

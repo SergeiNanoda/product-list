@@ -3,6 +3,7 @@ import fetchRequest from "../../utils/fetchRequest";
 import ProductListItem from "../productListItem/ProductListItem";
 import { GridChildComponentProps, FixedSizeGrid as Grid } from "react-window";
 import AutoSizer from "react-virtualized-auto-sizer";
+import { gridBreakpoints } from "../../constants/breakpoints";
 
 import "./productList.scss";
 
@@ -17,11 +18,13 @@ function ProductList() {
   const [products, setProducts] = useState<IProduct[]>([]);
   const [displayWidth, setDisplayWidth] = useState(0);
   const column_count = (() => {
-    if (displayWidth < 1300) return 1;
-    return displayWidth < 1650 ? 2 : 4;
+    if (displayWidth <= gridBreakpoints.lg) return 1;
+    if (displayWidth > gridBreakpoints.lg && displayWidth <= gridBreakpoints.xl)
+      return 2;
+    return displayWidth < gridBreakpoints.xxl ? 3 : 4;
   })();
 
-  const FIRST_ROW_PADDING = 85;
+  const FIRST_ROW_PADDING = 50;
 
   useEffect(() => {
     (async () => {
@@ -63,13 +66,15 @@ function ProductList() {
 
   return (
     <AutoSizer className="productList">
-      {({ height, width, ...rest }: { height: number; width: number }) => {
+      {({ height, width }: { height: number; width: number }) => {
         const WIDTH_PADDING = 20;
         const ROW_HEIGHT = 450;
-        const FAV_BLOCK_WIDTH = 606;
-        const FAV_BLOCK_HEIGHT = 340;
-        const calcWidth = width <= 970 ? width : width - FAV_BLOCK_WIDTH;
-        // const calcHeight = width <= 970 ? height - FAV_BLOCK_HEIGHT : height;
+        const FAV_BLOCK_WIDTH = 300;
+        const FAV_BLOCK_MARGIN = 50 * 2;
+        const calcWidth =
+          width <= gridBreakpoints.md
+            ? width
+            : width - FAV_BLOCK_WIDTH - FAV_BLOCK_MARGIN;
 
         setDisplayWidth(width);
 

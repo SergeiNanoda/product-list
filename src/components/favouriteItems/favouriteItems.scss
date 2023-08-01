@@ -1,18 +1,23 @@
+@use "sass:map";
+
 @import "/src/assets/color.scss";
+@import "/src/assets/breakpoints.scss";
 
 .favouriteItems {
   display: flex;
   flex-direction: column;
   border: 2px dashed $darkgray;
   border-radius: 30px;
-  width: 407px;
-  height: calc(100vh - 300px);
-  padding: 20px 30px;
-  margin: 100px;
+  min-width: 300px;
+  max-width: 300px;
+  max-height: calc(100vh - 150px);
+  padding: 20px 20px;
+  margin: 50px;
   box-sizing: border-box;
 
   &__title {
     font-family: "Anek Telugu", sans-serif;
+    text-align: center;
     font-size: 24px;
     font-weight: 600;
     line-height: 36px;
@@ -23,17 +28,18 @@
   }
 }
 
-@media (max-width: 970px) {
+@media (max-width: map.get($grid-breakpoints, "md")) {
   .favouriteItems {
     position: absolute;
     z-index: 100;
-    left: -100%;
-    top: 100px;
+    left: -200%;
+    top: 50px;
     width: 100%;
+    min-width: auto;
     border-radius: 0;
     background-color: white;
     margin: 0;
-    height: calc(100vh - 101px);
+    min-height: calc(100vh - 51px);
     max-width: 100%;
     transition: left 1s;
   }
@@ -41,6 +47,6 @@
     left: 0px;
   }
   .favouriteItems.hidden {
-    left: -100%;
+    left: -200%;
   }
 }

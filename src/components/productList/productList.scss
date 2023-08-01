@@ -1,10 +1,8 @@
+@use "sass:map";
+
+@import "/src/assets/breakpoints.scss";
+
 .productList {
   display: flex;
   flex: 1;
-}
-@media (max-width: 970px) {
-  .productList {
-    height: 100vh !important;
-    width: 100vw !important;
-  }
 }

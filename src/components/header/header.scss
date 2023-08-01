@@ -1,4 +1,7 @@
+@use "sass:map";
+
 @import "/src/assets/color.scss";
+@import "/src/assets/breakpoints.scss";
 
 .header {
   display: flex;
@@ -7,7 +10,7 @@
   background: $yellow;
   width: 100%;
   border-bottom: 1px solid $darkgray;
-  min-height: 100px;
+  min-height: 50px;
 
   &__title {
     display: block;
@@ -19,14 +22,14 @@
   }
 }
 .fa-house {
-  font-size: 3em;
+  font-size: 1.5em;
   margin-left: 20px;
   margin-right: 20px;
   width: auto;
   height: auto;
   cursor: pointer;
 }
-@media (max-width: 348px) {
+@media (max-width: map.get($grid-breakpoints, "sm")) {
   .header__title {
     display: none;
   }
@@ -37,10 +40,10 @@
 .favouriteItemsButton {
   display: none;
 }
-@media (max-width: 970px) {
+@media (max-width: map.get($grid-breakpoints, "md")) {
   .favouriteItemsButton {
     display: block;
-    font-size: 3em;
+    font-size: 1.5em;
     margin-left: 20px;
     margin-right: 20px;
     width: auto;
