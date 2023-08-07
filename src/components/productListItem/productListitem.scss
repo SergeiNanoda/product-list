@@ -51,10 +51,6 @@ button {
       width: 36px;
       height: 36px;
     }
-    svg:hover {
-      width: 40px;
-      height: 40px;
-    }
   }
 }
 
@@ -97,13 +93,12 @@ button {
   }
 
   button {
+    width: 36px;
+    height: 36px;
+
     svg {
       width: 30px;
       height: 30px;
-    }
-    svg:hover {
-      width: 35px;
-      height: 35px;
     }
   }
 }

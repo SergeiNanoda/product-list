@@ -52,7 +52,6 @@ export const SingleProduct: React.FC<{}> = () => {
         <div className="singleProduct__footer">
           <span className="singleProduct__price">{`$\xa0${product.price}`}</span>
           <button
-            className="singleButton"
             onClick={(e) => {
               e.stopPropagation();
               toggleFavourites(product);

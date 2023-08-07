@@ -51,15 +51,7 @@
       width: 50px;
       height: 50px;
     }
-    svg:hover {
-      width: 55px;
-      height: 55px;
-    }
   }
-}
-.singleButton {
-  width: 61px;
-  height: 61px;
 }
 @media (max-width: map.get($grid-breakpoints, "lg")) {
   .singleProduct {
