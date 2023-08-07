@@ -1,6 +1,9 @@
+@use "sass:map";
+
+@import "/src/assets/breakpoints.scss";
+
 .singleProduct {
   display: flex;
-  max-height: 530px;
   border: black dashed 2px;
   border-radius: 30px;
   padding: 30px;
@@ -9,19 +12,21 @@
   &__content {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     justify-content: space-between;
-    margin-left: 50px;
-    padding-top: 50px;
+    margin-left: 20px;
+    padding-top: 20px;
   }
 
   &__title {
-    font-size: 64px;
+    font-size: 2em;
     font-weight: 400;
   }
 
   &__price {
-    font-size: 64px;
+    font-size: 2.5em;
     font-weight: 500;
+    margin-top: 10px;
   }
 
   &__footer {
@@ -37,21 +42,27 @@
   }
 
   &__img {
-    max-width: 448px;
+    max-width: 300px;
+    min-width: 100px;
   }
 
   button {
     svg {
-      width: 60px;
-      height: 60px;
+      width: 50px;
+      height: 50px;
     }
     svg:hover {
-      width: 65px;
-      height: 65px;
+      width: 55px;
+      height: 55px;
     }
   }
 }
 .singleButton {
   width: 61px;
   height: 61px;
+}
+@media (max-width: map.get($grid-breakpoints, "lg")) {
+  .singleProduct {
+    flex-direction: column;
+  }
 }
