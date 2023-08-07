@@ -42,11 +42,20 @@
     min-height: calc(100vh - 51px);
     max-width: 100%;
     transition: left 1s;
+    padding-right: 0;
+    padding-bottom: 0;
   }
   .favouriteItems.visible {
     left: 0px;
   }
   .favouriteItems.hidden {
     left: -200%;
+  }
+}
+
+@media (max-width: map.get($grid-breakpoints, "xs")) {
+  .favouriteItems {
+    min-width: map.get($grid-breakpoints, "xs");
+    min-height: calc(100vh - 51px - 17px);
   }
 }

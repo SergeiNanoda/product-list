@@ -64,20 +64,20 @@ button {
   }
 }
 .productListItem-minimized {
-  height: 160px;
   display: flex;
+  flex-direction: column;
   align-self: center;
 
   img {
-    max-width: 108px;
-    max-height: 108px;
+    max-width: 100px;
+    max-height: 100px;
     cursor: pointer;
   }
 
   &__title {
     font-size: 16px;
     font-weight: 400;
-    max-height: 68px;
+    padding-right: 8px;
     height: 100%;
     flex: 0 0 48px;
   }
@@ -94,7 +94,6 @@ button {
 
   &__content {
     width: 100%;
-    padding-left: 15px;
   }
 
   button {
