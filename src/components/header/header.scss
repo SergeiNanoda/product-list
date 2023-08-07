@@ -43,11 +43,32 @@
 @media (max-width: map.get($grid-breakpoints, "md")) {
   .favouriteItemsButton {
     display: block;
+    position: relative;
     font-size: 1.5em;
     margin-left: 20px;
     margin-right: 20px;
     width: auto;
     height: auto;
     cursor: pointer;
+  }
+  .favouriteCount.visible {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translate(60%, -30%);
+    min-width: 15px;
+    height: 15px;
+    padding: 3px;
+    background-color: white;
+    font-size: 0.6em;
+    // border: 1px solid black;
+    border-radius: 50px;
+  }
+  .favouriteCount.hidden {
+    display: none;
   }
 }
