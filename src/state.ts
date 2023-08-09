@@ -1,8 +1,11 @@
 import { createGlobalState } from "react-hooks-global-state";
 import { IProduct } from "./components/productList/ProductList";
 
+const favouritesInitialState = localStorage.getItem("favourites")
+  ? JSON.parse(localStorage.getItem("favourites") as string)
+  : [];
 const initialState = {
-  favourites: [] as IProduct[],
+  favourites: favouritesInitialState as IProduct[],
   isFavouritesVisible: false,
 };
 
